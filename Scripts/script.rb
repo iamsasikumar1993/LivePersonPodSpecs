@@ -16,9 +16,9 @@ Dir['LPMessagingSDK/*'].each do |path|
     podspec_json_string = %x(pod ipc spec "LPMessagingSDK/#{File.basename(path)}/LPMessagingSDK.podspec")
     podspec_json = JSON.parse(podspec_json_string)
     pretty_str = JSON.pretty_unparse(podspec_json)
-    spec_dir = "Specs/" + File.basename(path)
+    spec_dir = "Specs/0/0/0/LPMessagingSDK/" + File.basename(path)
     spec_path = spec_dir + "/LPMessagingSDK.podspec.json"
-    Dir.mkdir spec_dir
+    FileUtils.mkpath(spec_dir)
     output = File.open(spec_path,"w" )
     output << pretty_str
     output.close
