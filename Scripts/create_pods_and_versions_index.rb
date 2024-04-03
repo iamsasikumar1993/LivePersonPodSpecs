@@ -6,7 +6,7 @@ require 'cocoapods'
 source = Pod::Source.new('.')
 pods = source.pods
 shards = pods.each_with_object({}) do |pod, hash|
-  shard = source.metadata.path_fragment(pod)[0...-1].join('_')
+  shard = source.metadata.path_fragment(pod).join('_')
   versions = source.versions(pod).map(&:to_s).reverse
   hash[shard] ||= {}
   hash[shard][pod] = versions
@@ -34,7 +34,7 @@ STDERR.puts "Total pod count: #{pods.count}"
 STDERR.puts "Total podspec count: #{shards.values.map(&:values).flatten.count}"
 
 # get a list of all deprecated pods
-deprecated_podspecs = Dir['Specs/**/*.podspec.json'].sort.select do |podspec_path|
+deprecated_podspecs = Dir['Specs/*/*.podspec.json'].sort.select do |podspec_path|
   podspec = Pod::Specification.from_file(podspec_path)
   podspec.deprecated?
 end
