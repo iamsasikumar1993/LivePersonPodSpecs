@@ -5,7 +5,7 @@ require 'cocoapods'
 
 STDERR.puts 'CDN Indexer v2'
 
-Dir.chdir('_specs')
+Dir.chdir('')
 site_dir = '_site'
 
 source = Pod::Source.new('.')
