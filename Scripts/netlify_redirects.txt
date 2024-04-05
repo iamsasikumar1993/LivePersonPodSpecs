@@ -1,2 +1,2 @@
 /                      https://github.com/iamsasikumar1993/LivePersonPodSpecs/ 302
-/Specs/*               https://cdn.jsdelivr.net/iamsasikumar1993/LivePersonPodSpecs/:splat
+/LivePersonPodSpecs/*               https://cdn.jsdelivr.net/gh/iamsasikumar1993/LivePersonPodSpecs/:splat
